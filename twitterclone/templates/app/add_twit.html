@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title%}Add Twit page{% endblock %}
+
+{% block body %}
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="content">: </label>
+        <input id="content" type="text" name="content">
+        <label for="image">Your image: </label>
+        <input type="file" name = "image">
+        <input type="submit" value="Send">
+    </form>
+
+    {% if success %}
+        <br> Twit was added!
+    {% endif %}
+
+{% endblock %}

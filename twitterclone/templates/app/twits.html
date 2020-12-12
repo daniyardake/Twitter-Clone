@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title%}Twits page{% endblock %}
+
+{% block body %}
+    {% for twit in twits %}
+        <div class="alert alert-primary" role="alert">
+            <b><a href = "{% url 'user' twit.author.login %}">{{twit.author.login}}</a></b>: {{twit.content}}   <a class = "btn btn-primary" style = "height: 35px" href = "{% url 'twit' twit.pk %}">Open</a>
+            <br>
+        </div>
+    {% endfor %}
+{% endblock %}

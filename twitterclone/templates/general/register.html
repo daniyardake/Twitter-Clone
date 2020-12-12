@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title%}Register page{% endblock %}
+
+{% block body %}
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="login">Your login: </label>
+        <input id="login" type="text" name="login">
+        <label for="password">Your password: </label>
+        <input id="password" type="password" name="password">
+        <label for="image">Your image: </label>
+        <input type="file" name = "image">
+        <input type="submit" value="Register">
+    </form>
+
+    {% if error_data %}
+        <br> Some of your data is invalid
+    {% endif %}
+
+    {% if error_login %}
+        <br> This login is already taken
+    {% endif %}
+{% endblock %}
