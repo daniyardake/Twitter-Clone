@@ -1,5 +1,8 @@
 # Creating Twitter Clone Tutorial
 
+This is a simple tutorial by Daniyar Aubekerov on how to build minimalistic twitter application.
+
+
 ## Creating new django project:
 ```
 django-admin startproject twitterclone
